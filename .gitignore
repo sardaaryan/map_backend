@@ -1,0 +1,33 @@
+# =========================
+# Virtual Environments
+# =========================
+# (Seen in your root directory)
+.venv/
+venv/
+env/
+
+# =========================
+# Python Cache & Bytecode
+# =========================
+# (Seen throughout your project)
+__pycache__/
+*.py[cod]
+*$py.class
+
+# =========================
+# Environment Variables
+# =========================
+.env
+.env.local
+
+# =========================
+# OS Generated Files
+# =========================
+.DS_Store
+Thumbs.db
+
+# =========================
+# Auto-generated Output Files 
+# =========================
+fog_finder/fog_map.html
+peak_finder/peak_finder_results.html

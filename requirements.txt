@@ -1,0 +1,8 @@
+modal
+fastapi
+uvicorn
+numpy
+scipy
+requests
+astral
+timezonefinder
