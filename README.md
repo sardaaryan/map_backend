@@ -45,21 +45,38 @@ python -m venv .venv
 source .venv/bin/activate  # On Windows use: .venv\Scripts\activate
 ```
 
-### 2. Environment Variables
-Create a .env.local file in the root directory. You will need to define your backend API URL and any required map provider tokens (if using a service like Mapbox).
+### 2. Install Dependencies
+Install the root dependencies required for the Modal app and overarching tools:
+
 ```bash
-NEXT_PUBLIC_BACKEND_URL="your_modal_backend_url"
-NEXT_PUBLIC_MAP_TOKEN="your_map_provider_token"
+pip install -r requirements.txt
+```
+*(Note: If working strictly within `fog_finder` or `peak_finder`, you may need to install their specific `requirements.txt` files).*
+
+### 3. Environment Variables
+If your weather or elevation APIs require keys, create a `.env` file in the root directory (this is ignored by Git):
+
+```text
+WEATHER_API_KEY="your_api_key_here"
+# Add other necessary keys...
 ```
 
-### 3. Start the Application
-Boot up the development server:
+---
+
+## 🏃‍♂️ Execution
+
+### Running Locally
+To test the individual modules locally, navigate to their respective directories and run their main entry points:
+
 ```bash
-npm run dev
+cd peak_finder
+python main.py
 ```
-Open **http://localhost:3000** in your browser to explore the map interface
+This will process the data and generate the local `.html` output files.
 
-## 🔗 Backend Architecture
-This frontend is decoupled and relies entirely on the Python backend for heavy GIS processing(elevation math, viewsheds, weather modeling).
+### Deploying via Modal
+To run the full application in the cloud using Modal:
 
-**To run the full stack locally or to view the data pipeline, please refer to the [Geospatial Backend Repository](https://github.com/sardaaryan/map_backend)**
+```bash
+modal run modal_app.py
+```
