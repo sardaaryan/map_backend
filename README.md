@@ -43,3 +43,23 @@ It is recommended to use a virtual environment to avoid dependency conflicts.
 ```bash
 python -m venv .venv
 source .venv/bin/activate  # On Windows use: .venv\Scripts\activate
+```
+
+### 2. Environment Variables
+Create a .env.local file in the root directory. You will need to define your backend API URL and any required map provider tokens (if using a service like Mapbox).
+```bash
+NEXT_PUBLIC_BACKEND_URL="your_modal_backend_url"
+NEXT_PUBLIC_MAP_TOKEN="your_map_provider_token"
+```
+
+### 3. Start the Application
+Boot up the development server:
+```bash
+npm run dev
+```
+Open **http://localhost:3000** in your browser to explore the map interface
+
+## 🔗 Backend Architecture
+This frontend is decoupled and relies entirely on the Python backend for heavy GIS processing(elevation math, viewsheds, weather modeling).
+
+**To run the full stack locally or to view the data pipeline, please refer to the [Geospatial Backend Repository](https://github.com/sardaaryan/map_backend)**
