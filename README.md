@@ -28,7 +28,7 @@ The root directory contains `modal_app.py`, which utilizes [Modal](https://modal
 
 ---
 
-## 🛠️ Tech Stack (Inferred)
+## 🛠️ Tech Stack
 * **Language:** Python
 * **Deployment/Compute:** Modal (`modal_app.py`)
 * **Visualization:** HTML/JS Map outputs (likely Folium/Leaflet)
